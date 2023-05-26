@@ -1,0 +1,342 @@
+* {
+    margin : 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+body {
+    background-color: blanchedalmond;
+    font-size: 18px;
+    font-family: 'Oswald', Arial, Helvetica, sans-serif;
+    margin: 0px;
+    overflow-x: hidden;
+
+}
+
+/*container*/
+.container {
+    display: grid;
+    gap: 10px;
+}
+
+/*header*/
+.header {
+    display: grid;
+    grid-template-areas:
+        'hero hero feature-1'
+        'hero hero feature-2';
+}
+
+.hero {
+    grid-area: hero;
+    min-height: 300px;
+    background-image: url(img/sekolah2.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 100px;
+}
+
+.hero > * {
+    display: none;
+}
+
+.hero .heading {
+    font-family: 'Passion One', cursive;
+    background-color: blanchedalmond;
+    color: #fabd02;
+    font-size: 2em;
+}
+
+.hero .sub-heading {
+    font-family: 'Readex Pro', sans-serif;
+    background-color: blanchedalmond;
+    color: #fabd02;
+}
+.features {
+    background-color: black;
+    color:whitesmoke;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    cursor: pointer;
+}
+
+.feature-1 {
+    grid-area: feature-1;
+    background-image: url(img/latsol.jpg);
+    background-size: cover;
+}
+
+.feature-2 {
+    grid-area: feature-2;
+    background-image: url(img/buku.jpg);
+    background-size: cover;
+}
+
+.features .jenis {
+    font-size: 1.5em;
+    font-weight: 250;
+    background-color: blanchedalmond;
+    color: #fabd02;
+    font-family: 'Passion One', cursive;
+    /* background-color: #fabd02;  */
+    
+    
+}
+
+/* Navigasi */
+.menu {
+    order: -1;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    background-color: #fabd02;
+    height: 50px;
+    line-height: 35px;
+    position: fixed;
+    width: 100%;
+    
+}
+
+.menu .brand {
+    font-size: 2em;
+    color: white;
+    padding-left: 100px;
+    font-family: 'Passion One', cursive;
+}
+
+.menu ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 3px;
+}
+
+.menu a {
+    display: block;
+    color: whitesmoke;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+    text-transform: uppercase;
+    font-size: 0.7em;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+/* hamburger menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+    z-index: 10000;
+    padding-right: 30px;
+   
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+
+/* animasi menu hamburger */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: whitesmoke;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: whitesmoke;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    transform: scale(0);
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    left: -5px;
+    top: -3px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* services */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.service {
+    background-color: white;
+    padding: 40px 10px 40px 10px;
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    box-shadow: 0 0 2px rgb( 0, 0, 0, 0.3);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.service h3 {
+    font-size: 1em;
+}
+
+.service p {
+    font-size: 0.8em;
+}
+
+.konten {
+    padding: 250px 100px;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.konten .about h3 {
+    font-size: 1.5em;
+}
+
+.konten .about h3::after {
+    content: "";
+    border-bottom: 5px solid #fabd02;
+    width: 70px;
+    display: block;
+    margin: 20px auto;;
+}
+
+.quotes {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    color: white;
+    font-size: 1.3em;
+    font-style: italic;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    background-image: url(img/bjhabibie2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    text-align: center;
+    background-color: #fabd02;
+    color: white;
+    padding: 50px;
+}
+
+.nama h2{
+    font-size: 2em;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+footer h2 {
+    padding: 30px;
+}
+
+footer ul {
+    list-style: none;
+    font-size: 0.8em;
+    padding-top: 7px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.left {
+    padding-bottom: 30px;
+}
+
+/*Responsive Breakpoint*/
+@media (max-width: 1024px) {
+    .menu {
+        order: inherit;
+        grid-template-columns: 1fr
+    }
+   
+    .menu .brand {
+        display: none;
+    }
+
+    .hero > * {
+        display: block;
+        background-color: black;
+        color: whitesmoke;
+        padding: 5px;
+        margin-bottom: 5px;
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 768px){
+    .menu {
+        order: -1;
+        justify-items: end;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .menu ul {
+        display: flex;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 50%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fabd02;
+        z-index: 1;
+        transform: translateX(100%);
+        transition: all 0.5s;
+        opacity: 0;
+    }
+
+    .menu ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+@media (max-width: 600px) {
+    .header {
+        grid-template-areas: 
+        'hero'
+        'feature-1'
+        'feature-2';
+    }
+}
